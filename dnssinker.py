@@ -44,7 +44,7 @@ def handle_query(data, sock, client_address, client_port, blocked_domains):
     else:
         try:
             # Forwards queries to Google's DNS server if the domain is not blocked
-            google_dns = ("8.8.8.8", 53)
+            google_dns = ("8.8.8.8", 59)
             google_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             google_sock.sendto(data, google_dns)
             google_sock.settimeout(5)  # Timeout for receiving response from Google's DNS server
